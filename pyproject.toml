@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tldrapi"
+version = "0.1.0"
+description = "Official Python SDK for the TLDRapi summarization API. Summarize text at 5 quality tiers with 20+ built-in voice styles."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ehren Biglari", email = "unitycubedapps@gmail.com" }]
+keywords = ["tldrapi", "summarize", "summarizer", "summary", "tldr", "abstract", "llm", "ai", "nlp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+dependencies = [
+    "httpx>=0.24,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-asyncio>=0.21",
+    "respx>=0.20",
+]
+
+[project.urls]
+Homepage = "https://unitycubed.com/tldrapi"
+Documentation = "https://unitycubed.com/tldrapi/docs"
+Repository = "https://github.com/unitycubedapps/tldrapi-python"
+Issues = "https://github.com/unitycubedapps/tldrapi-python/issues"
+
+[tool.setuptools.packages.find]
+include = ["tldrapi*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
