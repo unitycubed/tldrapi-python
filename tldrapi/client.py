@@ -49,8 +49,8 @@ from .models import Rates, SummarizeResult, Usage, UsageStats
 #
 # The RapidAPI host below is the marketplace-facing hostname; substitute
 # the real one once the listing is published. It is intentionally NOT
-# `unitycubed.dev/TLDRapi` (that hostname is behind the proxy).
-DEFAULT_RAPIDAPI_HOST = "tldrapi.p.rapidapi.com"
+# `tldrapi-summarizer.p.rapidapi.com` (that hostname is behind the proxy).
+DEFAULT_RAPIDAPI_HOST = "tldrapi-summarizer.p.rapidapi.com"
 DEFAULT_BASE_URL = f"https://{DEFAULT_RAPIDAPI_HOST}"
 DEFAULT_TIMEOUT = 60.0
 DEFAULT_RETRIES = 3

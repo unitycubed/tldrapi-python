@@ -65,7 +65,7 @@ def test_summarize_sends_x_quality_and_auth_headers():
         c.summarize("input", tier="deep")
     req = route.calls[0].request
     assert req.headers["X-RapidAPI-Key"] == API_KEY
-    assert req.headers["X-RapidAPI-Host"] == "tldrapi.p.rapidapi.com"
+    assert req.headers["X-RapidAPI-Host"] == "tldrapi-summarizer.p.rapidapi.com"
     assert req.headers["X-Quality"] == "deep"
 
 
