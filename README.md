@@ -132,7 +132,7 @@ the response — attach when reporting issues), and `.response_body`
 ```python
 client = TLDRapi(
     rapidapi_key="YOUR_RAPIDAPI_KEY",
-    rapidapi_host="tldrapi-summarizer.p.rapidapi.com",   # override to point at a staging listing
+    rapidapi_host="tldrapi-summarization.p.rapidapi.com",   # override to point at a staging listing
     base_url=None,                           # default = https://{rapidapi_host}
     timeout=60.0,                            # default 60s per request
     retries=3,                               # 5xx + network retries, exponential backoff
