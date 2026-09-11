@@ -1,7 +1,3 @@
-> ### ⚠️ Service notice
->
-> **The RapidAPI listing that backs this SDK is temporarily unavailable while we work through a launch-day issue. Please check back in a few days.**
-
 # tldrapi — Python SDK for TLDRapi
 
 Official Python client for [TLDRapi](https://tldrapi.com) — summarize any
@@ -16,6 +12,29 @@ from the RapidAPI dashboard, and pass it to the client.
 ```bash
 pip install tldrapi
 ```
+
+## Get your app's RapidAPI key
+
+1. Sign in at [rapidapi.com](https://rapidapi.com)
+2. Subscribe to the [TLDRapi Summarizer](https://rapidapi.com/thunderAPIs256/api/tldrapi-summarizer) listing (start with **BASIC** — free)
+3. Go to **Console** (top nav) → **Applications** → **Add App** (or open an existing one)
+4. In the App → **Authorizations** tab → click the copy icon next to your Authorization Key
+
+That's the app's `X-RapidAPI-Key`. Pass it to the SDK constructor.
+
+*Legacy path (deprecated): upper-right (?) → Legacy Developer Dashboard → Add New App → Authorization tab. The new Console path above is simpler.*
+
+The Authorization Key field is the same value in both places — RapidAPI just labels it differently depending on which interface you use:
+
+**New Console:**
+
+![RapidAPI Console — Authorization Method labeled "RAPIDAPI"](https://raw.githubusercontent.com/unitycubed/tldrapi-docs/main/img/rapidapi-key-label-console.png)
+
+**Legacy Developer Dashboard:**
+
+![RapidAPI Legacy Developer Dashboard — Authorization Method labeled "API key"](https://raw.githubusercontent.com/unitycubed/tldrapi-docs/main/img/rapidapi-key-label-legacy.png)
+
+
 
 ## Quick start
 
@@ -113,7 +132,7 @@ the response — attach when reporting issues), and `.response_body`
 ```python
 client = TLDRapi(
     rapidapi_key="YOUR_RAPIDAPI_KEY",
-    rapidapi_host="tldrapi.p.rapidapi.com",   # override to point at a staging listing
+    rapidapi_host="tldrapi-summarizer.p.rapidapi.com",   # override to point at a staging listing
     base_url=None,                           # default = https://{rapidapi_host}
     timeout=60.0,                            # default 60s per request
     retries=3,                               # 5xx + network retries, exponential backoff
@@ -148,4 +167,6 @@ pytest -q                    # 20 tests, all HTTP mocked via respx
 
 ## License
 
-MIT.
+Released under the MIT License — see [LICENSE](LICENSE).
+
+Copyright (c) 2026 Ehren Biglari / Unity Cubed.
